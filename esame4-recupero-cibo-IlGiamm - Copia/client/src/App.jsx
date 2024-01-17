@@ -56,10 +56,9 @@ function App() {
 
   return (
     <>
-      <table class="table table-striped">
-        <thead>
+      <table className="table table-hover">
+        <thead >
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Ristorante</th>
             <th scope="col">Indirizzo</th>
             <th scope="col">Telefono</th>
@@ -68,9 +67,11 @@ function App() {
         </thead>
         <tbody>
           {restaurants.map((r)=>
-            <tr>
-              <th scope="row"> {r.id} </th>
-              <td>{r.name}</td>
+            <tr key={r.id}>
+              <th scope="row"> {r.nome} </th>
+              <td>{r.indirizzo}</td>
+              <td>{r.telefono}</td>
+              <td>{r.categoria}</td>
             </tr>
 
           )}

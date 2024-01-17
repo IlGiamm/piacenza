@@ -48,7 +48,7 @@ function getJson(httpResponsePromise) {
     const response = await fetch(URL + 'ristoranti');
     const restaurants = await response.json();
     if (response.ok) {
-      return restaurants.map((r) => ({id:r.ID}, { nome:r.Ristorante }, { indirizzo: r.Indirizzo },{telefono: r.Tel},{categoria: r.Categoria}))
+      return restaurants.map((r) => ({id:r.ID,  nome:r.Ristorante , indirizzo: r.Indirizzo ,telefono: r.Tel,categoria: r.Categoria}))
     } else {
       throw restaurants;  // mi aspetto che sia un oggetto json fornito dal server che contiene l'errore
     }
